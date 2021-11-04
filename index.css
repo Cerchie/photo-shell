@@ -1,0 +1,211 @@
+$transitionStyle: all 0.75s cubic-bezier(0.69, 0.26, 0.18, 1.01);
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6em;
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 105, 93, 1) 0%,
+    rgba(0, 170, 193, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+.slider-wrapper {
+  margin: 0 auto;
+  height: 500px;
+}
+
+.slides {
+  height: 100%;
+  min-width: 300px;
+  max-width: 300px;
+  margin-right: 20rem;
+  box-shadow: 0px 4px 10px 0 lightgrey;
+  border: 3px solid #fffdf6;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  background: #fffdf6;
+}
+
+.slider-overlay {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 10px;
+  margin-left: 35%;
+}
+
+.slides-wrapper {
+  height: 100%;
+  transition: $transitionStyle;
+}
+
+@media only screen and (max-width: 600px) {
+  .slider-overlay {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 10px;
+    margin-left: 5%;
+  }
+}
+
+.btn {
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background: #00aac1;
+    color: white;
+  }
+}
+
+.img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  transition: $transitionStyle;
+}
+
+.card-content {
+  margin-top: 250px;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+  letter-spacing: 0.5px;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.68) 73%,
+    rgba(0, 0, 0, 0.81) 100%
+  );
+}
+
+.liked-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.liked-tagline {
+  font-weight: 400;
+}
+
+.comments-wrapper {
+  padding: 10px;
+}
+.submit-comment input {
+  border-radius: 15px;
+  border: 2px solid #ededed;
+  padding: 7.5px 10px;
+  margin: 0 10px 0 0;
+  box-sizing: border-box;
+  width: 75%;
+}
+
+.submit-comment input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.5px;
+  padding-left: 5px;
+}
+
+button.submit-comment {
+  background: transparent;
+  border: 1px solid #aeaeae;
+  border-radius: 5%;
+  padding: 2rem;
+  height: 35px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.submit-comment svg path {
+  fill: #aeaeae;
+}
+
+.submit-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liked-tagline p {
+  border-bottom: 1px solid #1e1e6a;
+  color: #1e1e6a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.like-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.like-btn svg {
+  width: 25px;
+  height: 25px;
+}
+
+.active .like-btn svg {
+  animation: heartbeat 1.5s 2;
+  animation-delay: 1s;
+}
+
+.like-btn svg path {
+  transition: all 0.3s;
+}
+
+.like-btn:hover svg path {
+  fill: red;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.15);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.15);
+  }
+}
